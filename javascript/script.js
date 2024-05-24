@@ -16,19 +16,25 @@ function postersSpawn() {
 postersSpawn();
 
 function posterGenerate(i) {
+  let section = document.querySelector('section');
+  section.style.paddingRight = '20vw';
   assets.forEach((asset) => {
     asset.style.display = 'none';
+    asset.style.width = '';
+    asset.style.overflowX = '';
   });
   assets[i].style.display = 'block';
   let posters = assets[i].querySelectorAll('.poster');
   posters.forEach((poster, index) => {
     poster.style.display = 'none';
+    poster.style.position = 'absolute';
     poster.style.animation = '';
   });
+
   posters.forEach((poster, index) => {
     setTimeout(() => {
       poster.style.display = 'block';
-      poster.style.animation = 'scale 5s linear';
+      poster.style.animation = `scale 5s linear forwards`;
     }, index * 1000);
   });
 }
@@ -38,10 +44,11 @@ assets.forEach((asset) => {
 });
 
 function scrollPosters(asset) {
+  let section = document.querySelector('section');
+  section.style.paddingRight = '0';
   asset.querySelectorAll('.poster').forEach((poster) => {
-    poster.style.animation = '';
-    poster.style.display = 'block';
-    asset.style.width = '100vw';
+    asset.style.width = '80vw';
+    asset.style.overflowX = 'scroll';
     asset.style.display = 'flex';
     poster.style.position = 'relative';
   });

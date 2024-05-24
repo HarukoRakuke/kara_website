@@ -7,8 +7,6 @@ section {
   height: 100vh;
   width: 20vw;
   background-color: white;
-  position: fixed;
-  z-index: 10;
 }
 body {
   display: flex;
@@ -30,6 +28,10 @@ body {
   background-size: cover;
   display: none;
   transform-origin: top right;
+}
+
+.poster:last-child {
+  margin-right: 20vw;
 }
 
 @keyframes scale {
