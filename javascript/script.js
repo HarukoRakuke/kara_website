@@ -56,5 +56,9 @@ function scrollPosters(asset) {
 
 let buttons = document.querySelectorAll('h1');
 buttons.forEach((button, i) => {
-  button.addEventListener('click', () => posterGenerate(i));
+  button.addEventListener('mouseover', () => posterGenerate(i));
+  button.addEventListener('click', () => {
+    let asset = assets[i];
+    scrollPosters(asset);
+  });
 });
