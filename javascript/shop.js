@@ -7,14 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
         item.classList.add('albumCover');
         item.classList.add('item');
         item.setAttribute('id', `i${index + 1}`);
-        item.style.backgroundImage = `url('/img/item${index + 1}.png')`;
+        item.style.backgroundImage = `url('./img/item${index + 1}.png')`;
       }
 
       if (index >= albumCount) {
         item.classList.add('posterCover');
         item.classList.add('item');
         item.setAttribute('id', `i${index + 1}`);
-        item.style.backgroundImage = `url('/img/item${index + 1}.png')`;
+        item.style.backgroundImage = `url('./img/item${index + 1}.png')`;
       }
 
       itemsStack.push(item);
