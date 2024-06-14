@@ -83,14 +83,16 @@ section {
 }
 
 .previewContent > .albumCover,
-.previewContent > .posterCover {
+.previewContent > .posterCover,
+.itemCard > .albumCover,
+.itemCard > .posterCover {
   width: 100%;
   animation: scale 1s;
+  aspect-ratio: 1;
 }
 
 .albumCover {
   width: 5vw;
-  aspect-ratio: 1;
   background-size: cover;
   background-repeat: no-repeat;
   transform-origin: right top;
@@ -113,7 +115,6 @@ section {
 }
 .posterCover {
   width: 5vw;
-  aspect-ratio: 0.7;
   background-size: cover;
   transform-origin: right top;
   background-repeat: no-repeat;
