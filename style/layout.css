@@ -207,6 +207,7 @@ section {
 .buyButton {
   position: relative;
   margin-right: 2vw;
+  margin-left: 2vw;
 }
 .buyButton:hover:after {
   position: absolute;
