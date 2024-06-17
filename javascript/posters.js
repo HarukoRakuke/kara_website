@@ -55,9 +55,7 @@ function buttonHover() {
       function appendPoster(i, index) {
         let p = document.createElement('div');
         p.classList.add('poster');
-        p.style.backgroundImage = `url('../img/asset${i + 1}_${
-          index + 1
-        }.png')`;
+        p.style.backgroundImage = `url('./img/asset${i + 1}_${index + 1}.png')`;
         p.style.display = 'block';
         p.style.animation = `2s scale linear forwards`;
         p.style.animationDelay = `${index - 1}s`;
