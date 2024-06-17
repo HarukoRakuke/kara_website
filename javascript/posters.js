@@ -1,30 +1,6 @@
 let assets = document.querySelectorAll('.asset');
 let buttons = document.querySelectorAll('.button');
 let section = document.querySelector('section');
-let img = document.querySelector('.wave');
-let gif = document.querySelector('.waveIMG');
-
-function waveMove() {
-  gif = document.querySelector('.waveIMG');
-  img.addEventListener('mousemove', (e) => {
-    gif = document.querySelector('.waveIMG');
-    let topCoord = gif.offsetTop;
-    let leftCoord = gif.offsetLeft;
-    if (e.movementX < 0) {
-      gif.style.left = leftCoord + 1 + 'px';
-    }
-
-    if (e.movementY < 0) {
-      gif.style.top = topCoord + 1 + 'px';
-    }
-    if (e.movementX > 0) {
-      gif.style.left = leftCoord - 1 + 'px';
-    }
-    if (e.movementY > 0) {
-      gif.style.top = topCoord - 1 + 'px';
-    }
-  });
-}
 
 function assetClick() {
   assets.forEach((asset, i) => {
@@ -130,5 +106,4 @@ function buttonHover() {
 document.addEventListener('DOMContentLoaded', () => {
   buttonHover();
   assetClick();
-  waveMove();
 });

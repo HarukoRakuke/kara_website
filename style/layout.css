@@ -1,5 +1,53 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Press Start 2P', Arial, sans-serif;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+}
+a:hover,
+a:active {
+  color: black;
+}
+section {
+  padding-right: 20vw;
+  width: 80%;
+  margin-top: 4vh;
+  box-sizing: border-box;
+}
+.book > p {
+  font-size: 2vw;
+}
+.book > p:first-child {
+  margin-bottom: 4vw;
+}
+.bookSections {
+  display: flex;
+  gap: 2vw;
+  flex-direction: column;
+}
+.bookSection {
+  position: relative;
+}
+.bookSections + p {
+  margin-top: 4vw;
+}
+.page {
+  width: 22%;
+  aspect-ratio: 1.39;
+  background-size: contain;
+  position: absolute;
+  background-repeat: no-repeat;
+  right: 0;
+  top: 0;
+  transition: 2s ease-out;
+  box-shadow: 5px 5px 24px -20px rgba(0, 0, 0, 1);
 }
 .posters {
   width: 80vw;
@@ -7,16 +55,15 @@ body {
   padding-right: 20vw;
 }
 
-section {
-  padding-right: 20vw;
-  width: 80%;
-  margin-top: 4vh;
-  box-sizing: border-box;
+.index {
+  margin-top: 0;
 }
 .close {
-  position: sticky;
+  position: fixed;
   left: 80vw;
   bottom: 4vw;
+  z-index: 100;
+  display: none;
 }
 
 .overlap {
@@ -88,6 +135,14 @@ section {
 .itemCard > .posterCover {
   width: 100%;
   animation: scale 1s;
+}
+.previewContent > .posterCover,
+.itemCard > .posterCover {
+  aspect-ratio: 0.7;
+}
+
+.previewContent > .albumCover,
+.itemCard > .albumCover {
   aspect-ratio: 1;
 }
 
@@ -210,7 +265,9 @@ section {
   margin-right: 2vw;
   margin-left: 2vw;
 }
-.buyButton:hover:after {
+.buyButton:hover:after,
+a:hover:after,
+.button:hover:after {
   position: absolute;
   bottom: 0vw;
   content: '';
@@ -231,15 +288,10 @@ section {
 .itemInfo {
   width: 100%;
 }
-.button {
-  font-family: Arial, Helvetica, sans-serif;
+.button,
+a {
   margin-bottom: 1vw;
-}
-.button:hover {
-  text-decoration: underline;
-}
-.button:active {
-  opacity: 0.5;
+  position: relative;
 }
 
 .index {
@@ -267,7 +319,6 @@ section {
 }
 
 .index h1 {
-  font-family: 'Press Start 2P';
   font-size: 1vw;
   display: inline-block;
   z-index: 1;
@@ -336,14 +387,29 @@ body {
   top: -15%;
   left: -100%;
   pointer-events: none;
+  transition-property: transform, top;
+  transition-duration: 1s, 0.5s;
+  transition-delay: 0.3s, 0s;
 }
-
+.index > nav {
+  position: absolute;
+  background: none;
+  display: none;
+  width: 96%;
+  justify-content: space-between;
+  flex-direction: row;
+  top: 50%;
+  padding: 2vw;
+}
 .cursor {
   width: 9vw;
   aspect-ratio: 1;
   position: absolute;
   border: 0.15vw solid black;
   pointer-events: none;
+  transition-property: transform;
+  transition-duration: 1s;
+  transform-origin: top left;
 }
 
 .smallCursor {

@@ -5,41 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style/style.css" />
-    <script src="javascript/shop.js"></script>
+    <script src="javascript/cursor.js" type="module"></script>
+    <style>
+      body {
+        overflow: hidden;
+      }
+    </style>
   </head>
   <body>
-    <section class="overlap">
-      <div class="boughtItems"></div>
-      <div class="buyMenu"></div>
-      <span class="close">x</span>
-    </section>
-    <nav class="menu"></nav>
-    <section class="shop">
-      <div class="previewBox">
-        <div class="previewContent"></div>
-        <div class="productInfo">
-          <span class="title"></span>
-          <span class="price"></span>
-        </div>
-        <div class="toCart">в корзину</div>
+    <section class="index">
+      <div class="wave">
+        <img src="img/animatedWave.gif" class="waveIMG" />
       </div>
-      <div class="shopMechanismBox">
-        <div class="shopList">
-          <div class="firstRow"></div>
-          <div class="secondRow"></div>
-        </div>
-        <div class="productSub">
-          <div class="itemInfo">
-            <div class="description"></div>
-          </div>
-          <div class="cart">
-            <span class="buyButton">оплата</span>
-            <div class="cartScroll">
-              <div class="cartArea"></div>
-            </div>
-          </div>
-        </div>
+      <div class="titles">
+        <h1>
+          призрачное бюро <br />
+          расследований
+        </h1>
+        <h1>КАРА</h1>
       </div>
+      <nav class="menu">
+        <a href="posters.html">консультации</a>
+        <a href="shop.html">артефакты</a>
+        <a href="book.html">исследования</a>
+        <a href="index.html">превью</a>
+      </nav>
     </section>
   </body>
 </html>

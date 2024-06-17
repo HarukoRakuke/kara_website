@@ -1,4 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
+  let firstRowContainer = document.querySelector('.firstRow');
+  let secondRowContainer = document.querySelector('.secondRow');
+  let buttonToCart = document.querySelector('.toCart');
+  let descriptionPlace = document.querySelector('.description');
+  let shopList = document.querySelector('.shopList');
+  let previewBox = document.querySelector('.previewContent');
+  let productTitle = document.querySelector('.title');
+  let cart = document.querySelector('.cartArea');
+  let buyButton = document.querySelector('.buyButton');
+  let overlapSection = document.querySelector('.overlap');
+  let boughtItemsPanel = document.querySelector('.boughtItems');
+  let closeButton = document.querySelector('.close');
+
+  let status = 0;
+  let albumCount = 7;
+  let itemsCount = 15;
+
+  let titleArray = [
+    'симфония принятия',
+    'отторжение',
+    'растерянность',
+    'зенит',
+    'сознание принятия',
+    'оковы безысходности',
+    'выплески',
+    'саморазрушение',
+    'воспоминания',
+    'погружение',
+    'назад',
+    'несостыковка',
+    'ярость',
+    'гармония',
+  ];
+
   function generateAlbumStacks() {
     let itemsStack = [];
     for (let index = 0; index < itemsCount - 1; index++) {
@@ -101,6 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     buyButton.addEventListener('click', () => {
       overlapSection.style.zIndex = '5';
       overlapSection.style.opacity = '1';
+      closeSee();
       boughtItemsPanel.innerHTML = '';
       Array.from(cart.children).forEach((item, index) => {
         let itemClon = item.cloneNode(true);
@@ -120,44 +155,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function closeSee() {
+    if (overlapSection.style.zIndex == '-1') {
+      closeButton.style.display = 'none';
+    } else if (overlapSection.style.zIndex == '5') {
+      console.log('hi');
+      closeButton.style.display = 'block';
+    }
+  }
+
   function closePopup() {
     closeButton.addEventListener('click', () => {
       overlapSection.style.zIndex = '-1';
       overlapSection.style.opacity = '0';
+      closeButton.style.display = 'none';
     });
   }
-
-  let firstRowContainer = document.querySelector('.firstRow');
-  let secondRowContainer = document.querySelector('.secondRow');
-  let buttonToCart = document.querySelector('.toCart');
-  let descriptionPlace = document.querySelector('.description');
-  let shopList = document.querySelector('.shopList');
-  let status = 0;
-  let previewBox = document.querySelector('.previewContent');
-  let albumCount = 7;
-  let itemsCount = 15;
-  let productTitle = document.querySelector('.title');
-  let cart = document.querySelector('.cartArea');
-  let buyButton = document.querySelector('.buyButton');
-  let overlapSection = document.querySelector('.overlap');
-  let boughtItemsPanel = document.querySelector('.boughtItems');
-  let closeButton = document.querySelector('.close');
-  let titleArray = [
-    'симфония принятия',
-    'отторжение',
-    'растерянность',
-    'зенит',
-    'сознание принятия',
-    'оковы безысходности',
-    'выплески',
-    'саморазрушение',
-    'воспоминания',
-    'погружение',
-    'назад',
-    'несостыковка',
-    'ярость',
-    'гармония',
-  ];
 
   generateAlbumStacks();
   moveForwards();
