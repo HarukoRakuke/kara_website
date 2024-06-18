@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   let bookRows = document.querySelectorAll('.bookSection');
+  let overlaySection = document.querySelector('.bookOverlay');
+  let closeButton = document.querySelector('.pageClose');
 
   function spawnPages() {
     bookRows.forEach((row, index) => {
@@ -38,7 +40,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function giveIDtoPages() {
+    allPages.forEach((page, index) => {
+      page.setAttribute('id', `i${index}`);
+    });
+  }
+
+  function pageClick() {
+    allPages.forEach((page) => {
+      page.addEventListener('click', () => {
+        overlaySection.style.zIndex = '5';
+        overlaySection.style.opacity = '1';
+        index = page.id.substring(1);
+        let pageClone = page.cloneNode(true);
+        pageClone.style.right = 'auto';
+        console.log(pageClone);
+        overlaySection.appendChild(pageClone);
+      });
+    });
+  }
+
+  function closePopup() {
+    closeButton.addEventListener('click', () => {
+      overlaySection.style.zIndex = '-1';
+      overlaySection.style.opacity = '0';
+      setTimeout(() => {
+        overlaySection.children[1].remove();
+      }, 500);
+    });
+  }
+
   spawnPages();
   window.onresize = resize;
   movePages();
+  allPages = document.querySelectorAll('.page');
+  giveIDtoPages();
+  pageClick();
+  closePopup();
 });

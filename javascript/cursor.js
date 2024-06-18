@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let smallCursor = document.querySelector('.smallCursor');
 
   function moveCursor() {
-    img.addEventListener('mousemove', (e) => {
+    index.addEventListener('mousemove', (e) => {
       cursor.style.top = e.clientY + 'px';
       cursor.style.left = e.clientX + 'px';
       smallCursor.style.top = e.clientY + 'px';

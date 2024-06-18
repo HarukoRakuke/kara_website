@@ -159,7 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (overlapSection.style.zIndex == '-1') {
       closeButton.style.display = 'none';
     } else if (overlapSection.style.zIndex == '5') {
-      console.log('hi');
       closeButton.style.display = 'block';
     }
   }
