@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let bookRows = document.querySelectorAll('.bookSection');
   let overlaySection = document.querySelector('.bookOverlay');
   let closeButton = document.querySelector('.pageClose');
+  let leftButton = document.querySelector('.left');
+  let rightButton = document.querySelector('.right');
 
   function spawnPages() {
     bookRows.forEach((row, index) => {
@@ -49,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function pageClick() {
     allPages.forEach((page) => {
       page.addEventListener('click', () => {
-        overlaySection.style.zIndex = '5';
+        overlaySection.style.zIndex = '10';
         overlaySection.style.opacity = '1';
         index = page.id.substring(1);
         let pageClone = page.cloneNode(true);
@@ -57,6 +59,27 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(pageClone);
         overlaySection.appendChild(pageClone);
       });
+    });
+  }
+  let rightIndex;
+  let leftIndex;
+  function moveLeft() {
+    leftButton.addEventListener('click', () => {
+      leftIndex = parseInt(overlaySection.children[1].id.substring(1));
+      overlaySection.children[1].style.backgroundImage =
+        allPages[leftIndex - 1].style.backgroundImage;
+      overlaySection.children[1].id = `i${leftIndex - 1}`;
+      console.log(allPages[leftIndex - 1]);
+    });
+  }
+
+  function moveRight() {
+    rightButton.addEventListener('click', () => {
+      rightIndex = parseInt(overlaySection.children[1].id.substring(1));
+      console.log(rightIndex + 1);
+      overlaySection.children[1].style.backgroundImage =
+        allPages[rightIndex + 1].style.backgroundImage;
+      overlaySection.children[1].id = `i${rightIndex + 1}`;
     });
   }
 
@@ -75,6 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
   movePages();
   allPages = document.querySelectorAll('.page');
   giveIDtoPages();
+  moveLeft();
+  moveRight();
   pageClick();
   closePopup();
 });

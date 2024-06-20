@@ -1,7 +1,39 @@
 body {
   font-family: 'Press Start 2P', Arial, sans-serif;
+  user-select: none;
 }
 
+.webposter1 {
+  background-image: url('/img/webposter1.gif');
+  height: 100vh;
+  background-size: 100% auto;
+  background-position: center;
+}
+
+.webposter2 {
+  background-image: url('/img/webposter2.gif');
+  height: 100vh;
+  background-size: 100% auto;
+  background-position: center;
+}
+.webposter2 > a > span,
+.webposter1 > a > span {
+  font-size: 1vw;
+  position: absolute;
+  z-index: 3;
+  right: 20vw;
+  padding: 0.5vw 1vw;
+  background-color: white;
+  border: 0.1vw solid black;
+}
+.lens {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(217, 217, 217, 0.5);
+  backdrop-filter: blur(30px);
+}
 .bookOverlay {
   background-color: rgba(217, 217, 217, 0.5);
   backdrop-filter: blur(30px);
@@ -19,6 +51,7 @@ body {
 }
 .bookOverlay > .page {
   margin-left: 2vw;
+  transition: 0.8s linear;
   width: 80%;
   position: relative;
   order: 1;
@@ -31,6 +64,28 @@ body {
   justify-content: flex-end;
   padding-left: 2vw;
   box-sizing: border-box;
+}
+
+.poster1 > a > .navIMG {
+  --i: -27;
+  animation: moveRight 3.5s forwards ease-out;
+  animation-delay: -2.5s;
+}
+.poster1 > .menuButtons {
+  --i: -27;
+  animation: moveRight 3.5s forwards ease-out;
+  animation-delay: -2.5s;
+}
+
+.poster2 > a > .navIMG {
+  --i: -34;
+  animation: moveRight 4s forwards ease-out;
+  animation-delay: -3s;
+}
+.poster2 > .menuButtons {
+  --i: -34;
+  animation: moveRight 4s forwards ease-out;
+  animation-delay: -3s;
 }
 
 .bookArea > a > .navIMG {
@@ -48,6 +103,14 @@ body {
 }
 .postersArea > .menuButtons {
   --i: -9;
+}
+.shopNav > a > .navIMG {
+  animation: moveLeft 2s forwards ease-out;
+  animation-delay: -1s;
+}
+.shopNav > .menuButtons {
+  animation: moveLeft 2s forwards ease-out;
+  animation-delay: -1s;
 }
 .pageSwitches {
   display: flex;
@@ -73,15 +136,28 @@ nav {
 .scrollArea {
   width: 16vw;
   height: 100%;
-  margin-left: 2vw;
   position: relative;
   overflow: hidden;
+  transition-property: height;
+  transition-duration: 1s;
+}
+.dropDownHeight {
+  animation: dropDown 1s forwards;
+}
+@keyframes dropDown {
+  0% {
+    height: 16vw;
+  }
+  100% {
+    height: 24vw;
+  }
 }
 .navIMG {
   width: 50vw;
-  top: 0;
+  top: -2vw;
   position: absolute;
-  animation: moveRight 0.5s forwards ease-out;
+  animation: moveRight 2s forwards ease-out;
+  animation-delay: -1s;
 }
 .menuButtons {
   width: 50vw;
@@ -98,6 +174,15 @@ nav {
   }
   100% {
     left: calc(var(--i) * 1vw);
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    left: 9vw;
+  }
+  100% {
+    left: 0;
   }
 }
 .menuButtons > a,
@@ -127,7 +212,7 @@ a:active {
 section {
   padding-right: 20vw;
   width: 80%;
-  margin-top: 4vh;
+  padding-top: 4vh;
   box-sizing: border-box;
   margin-left: 20vw;
 }
@@ -166,7 +251,7 @@ section {
 }
 
 .index {
-  margin-top: 0;
+  padding-top: 0;
   margin-left: 0;
 }
 .close {
@@ -399,8 +484,15 @@ a:hover:after,
 .itemInfo {
   width: 100%;
 }
+
+.indexA:after {
+  display: none;
+}
+
 .button,
-a {
+.menuButtons > a,
+.dropDown > a,
+.menu > a {
   margin-bottom: 1vw;
   font-size: 0.7vw;
   position: relative;
@@ -425,9 +517,14 @@ a {
   pointer-events: none;
 }
 .menu {
-  height: 100vh;
-  width: 20vw;
+  height: 16vw;
+  width: 16vw;
+  left: 2vw;
+  top: 2vw;
   background-color: white;
+  position: fixed;
+  border: 0.1vw solid black;
+  z-index: 7;
 }
 
 .index h1 {
@@ -506,6 +603,7 @@ body {
 .index > nav {
   position: absolute;
   background: none;
+  border: none;
   display: none;
   width: 96%;
   justify-content: space-between;
@@ -523,13 +621,19 @@ body {
   transition-duration: 1s;
   transform-origin: top left;
 }
-
+.dragArea {
+  width: 1vw;
+  height: 1vw;
+  background-color: black;
+  position: absolute;
+  z-index: 7;
+}
 .smallCursor {
   width: 1vw;
   height: 1vw;
   background-color: black;
   position: absolute;
-  z-index: 5;
+  z-index: 7;
   pointer-events: none;
 }
 
@@ -541,6 +645,6 @@ body {
   mix-blend-mode: lighten;
   width: 100%;
   height: 100%;
-  z-index: 5;
+  z-index: 7;
   mix-blend-mode: none;
 }

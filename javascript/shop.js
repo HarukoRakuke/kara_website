@@ -133,10 +133,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function buyPopup() {
     buyButton.addEventListener('click', () => {
-      overlapSection.style.zIndex = '5';
+      overlapSection.style.zIndex = '10';
       overlapSection.style.opacity = '1';
       closeSee();
-      boughtItemsPanel.innerHTML = '';
       Array.from(cart.children).forEach((item, index) => {
         let itemClon = item.cloneNode(true);
         let card = document.createElement('div');
@@ -158,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function closeSee() {
     if (overlapSection.style.zIndex == '-1') {
       closeButton.style.display = 'none';
-    } else if (overlapSection.style.zIndex == '5') {
+    } else if (overlapSection.style.zIndex == '10') {
       closeButton.style.display = 'block';
     }
   }
@@ -168,6 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
       overlapSection.style.zIndex = '-1';
       overlapSection.style.opacity = '0';
       closeButton.style.display = 'none';
+      boughtItemsPanel.innerHTML = '';
     });
   }
 
