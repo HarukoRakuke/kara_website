@@ -34,6 +34,7 @@ body {
   background-color: rgba(217, 217, 217, 0.5);
   backdrop-filter: blur(30px);
 }
+
 .bookOverlay {
   background-color: rgba(217, 217, 217, 0.5);
   backdrop-filter: blur(30px);
@@ -43,7 +44,7 @@ body {
   opacity: 0;
   z-index: -1;
   margin-left: 0;
-  margin-top: 0;
+  padding-top: 0;
   display: flex;
   flex-wrap: wrap;
   align-content: center;
@@ -115,10 +116,12 @@ body {
 .pageSwitches {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }
 .pagesArrows {
   display: flex;
   gap: 5%;
+  font-size: 1.3vw;
 }
 
 nav {
@@ -254,8 +257,13 @@ section {
   padding-top: 0;
   margin-left: 0;
 }
+
+.pageClose {
+  font-size: 1.5vw;
+}
 .close {
   position: fixed;
+  font-size: 1.5vw;
   left: 80vw;
   bottom: 4vw;
   z-index: 100;
@@ -272,20 +280,54 @@ section {
   z-index: -1;
   padding-left: 20vw;
   margin-top: 0;
+  display: flex;
   background-color: rgba(217, 217, 217, 0.5);
   transition: all 0.4s;
 }
 
+.buyMenu > div,
+.buyButtons > span {
+  font-size: 1vw;
+}
+.buyMenu > div:nth-child(1) {
+  margin-bottom: 8vw;
+}
+.buyMenu > div + div {
+  margin-bottom: 1.5vw;
+}
+.buyButtons {
+  display: flex;
+  gap: 1vw;
+}
+.buyButtons > span {
+  box-sizing: border-box;
+  padding: 0.5vw 1vw;
+  background-color: white;
+  border: 0.1vw solid black;
+}
+.buyMenu {
+  position: fixed;
+  z-index: 11;
+  right: 0;
+  top: 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  padding-left: 2vw;
+  display: none;
+  box-sizing: border-box;
+}
 .shop {
   display: flex;
   box-sizing: border-box;
 }
 
 .cardText {
-  width: 50%;
+  min-width: 50%;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  font-size: 1vw;
 }
 
 .boughtItems,
@@ -296,7 +338,8 @@ section {
 .itemCard {
   width: 100%;
   display: flex;
-  padding: 1vw 4vw 1vw 0;
+  padding: 0vw 2vw 1vw 2vw;
+  margin-bottom: 4vw;
   box-sizing: border-box;
 }
 .itemCard > .item {
@@ -441,35 +484,33 @@ section {
   display: flex;
   justify-content: space-between;
 }
-.toCart {
+.toCart,
+.fromCart {
   position: absolute;
   bottom: 4vw;
+  font-size: 1vw;
 }
-.toCart:hover:after {
-  position: absolute;
-  bottom: 0vw;
-  content: '';
-  width: 100%;
-  transform-origin: center;
-  height: 1px;
-  left: 0;
-  background-color: black;
-  animation: 0.2s scale;
+.fromCart {
+  right: 2vw;
 }
+
 .buyButton {
   position: relative;
+  font-size: 1vw;
   margin-right: 2vw;
   margin-left: 2vw;
 }
 .buyButton:hover:after,
 a:hover:after,
-.button:hover:after {
+.button:hover:after,
+.toCart:hover:after,
+.fromCart:hover:after {
   position: absolute;
-  bottom: 0vw;
+  bottom: -0.1vw;
   content: '';
   width: 100%;
   transform-origin: center;
-  height: 1px;
+  height: 0.1vw;
   left: 0;
   background-color: black;
   animation: 0.2s scale;
@@ -581,7 +622,13 @@ body {
 .opacityAnim {
   animation: opacity 1s forwards;
 }
-
+.description {
+  font-size: 1vw;
+}
+.title,
+.price {
+  font-size: 1vw;
+}
 .wave {
   width: 100vw;
   height: 100vh;

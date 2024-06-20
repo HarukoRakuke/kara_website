@@ -2,10 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
   let firstRowContainer = document.querySelector('.firstRow');
   let secondRowContainer = document.querySelector('.secondRow');
   let buttonToCart = document.querySelector('.toCart');
+  let buttomRemoveFromCart = document.querySelector('.fromCart');
   let descriptionPlace = document.querySelector('.description');
   let shopList = document.querySelector('.shopList');
   let previewBox = document.querySelector('.previewContent');
   let productTitle = document.querySelector('.title');
+  let buyMenu = document.querySelector('.buyMenu');
+  let price = document.querySelector('.price');
   let cart = document.querySelector('.cartArea');
   let buyButton = document.querySelector('.buyButton');
   let overlapSection = document.querySelector('.overlap');
@@ -32,6 +35,29 @@ document.addEventListener('DOMContentLoaded', () => {
     'ярость',
     'гармония',
   ];
+
+  function removeDuplicateNodesById(arr) {
+    const uniqueNodes = [];
+    const seenIds = new Set();
+    const duplicates = {};
+
+    arr.forEach((node) => {
+      const id = node.id;
+      if (!seenIds.has(id)) {
+        seenIds.add(id);
+        uniqueNodes.push(node);
+        duplicates[id] = 1;
+      } else {
+        if (duplicates[id]) {
+          duplicates[id]++;
+        } else {
+          duplicates[id] = 2; // Initialize with 2 for the first duplicate found
+        }
+      }
+    });
+
+    return { uniqueNodes, duplicates };
+  }
 
   function generateAlbumStacks() {
     let itemsStack = [];
@@ -89,8 +115,13 @@ document.addEventListener('DOMContentLoaded', () => {
         let productIndex = e.target.id.substring(1);
         productTitle.innerHTML = titleArray[productIndex - 1];
         productTitle.classList.remove('opacityAnim');
+        price.innerHTML = '$20';
+        price.classList.remove('opacityAnim');
         setTimeout(() => {
           productTitle.classList.add('opacityAnim');
+        });
+        setTimeout(() => {
+          price.classList.add('opacityAnim');
         });
 
         console.log(productIndex);
@@ -135,14 +166,19 @@ document.addEventListener('DOMContentLoaded', () => {
     buyButton.addEventListener('click', () => {
       overlapSection.style.zIndex = '10';
       overlapSection.style.opacity = '1';
+      buyMenu.style.display = 'block';
       closeSee();
-      Array.from(cart.children).forEach((item, index) => {
+      let boughtItems = Array.from(cart.children);
+      const { uniqueNodes, duplicates } = removeDuplicateNodesById(boughtItems);
+      let boughtItemsNoRepeat = uniqueNodes;
+      boughtItemsNoRepeat.forEach((item, index) => {
         let itemClon = item.cloneNode(true);
         let card = document.createElement('div');
         let textDescription = document.createElement('div');
         let tagName = document.createElement('div');
         tagName.innerHTML = titleArray[itemClon.id.substring(1) - 1];
         let countTag = document.createElement('div');
+        countTag.innerHTML = `x${duplicates[item.id]}`;
         card.classList.add('itemCard');
         textDescription.classList.add('cardText');
         boughtItemsPanel.append(card);
@@ -168,12 +204,27 @@ document.addEventListener('DOMContentLoaded', () => {
       overlapSection.style.opacity = '0';
       closeButton.style.display = 'none';
       boughtItemsPanel.innerHTML = '';
+      buyMenu.style.display = 'none';
+    });
+  }
+
+  function removeFromCart() {
+    buttomRemoveFromCart.addEventListener('click', () => {
+      let toDelete = previewBox.children[0];
+
+      for (let i = 0; i < cart.children.length; i++) {
+        if (cart.children[i].id == toDelete.id) {
+          console.log('hi');
+          cart.children[i].remove();
+        }
+      }
     });
   }
 
   generateAlbumStacks();
   moveForwards();
   addToCart();
+  removeFromCart();
   buyPopup();
   closePopup();
 });
