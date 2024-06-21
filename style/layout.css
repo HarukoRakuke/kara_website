@@ -4,14 +4,17 @@ body {
 }
 
 .webposter1 {
-  background-image: url('/img/webposter1.gif');
+  background-image: url('./img/webposter1.gif');
   height: 100vh;
   background-size: 100% auto;
   background-position: center;
 }
-
+.webposter1 > a:hover:after,
+.webposter2 > a:hover:after {
+  display: none;
+}
 .webposter2 {
-  background-image: url('/img/webposter2.gif');
+  background-image: url('./img/webposter2.gif');
   height: 100vh;
   background-size: 100% auto;
   background-position: center;
