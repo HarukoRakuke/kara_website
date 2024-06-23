@@ -7,8 +7,50 @@
     <link rel="stylesheet" href="style/style.css" />
     <script src="javascript/book.js"></script>
     <script src="javascript/menu.js"></script>
+    <script src="javascript/form.js"></script>
   </head>
   <body>
+    <a class="openButton">связаться</a>
+    <span class="closeForm">x</span>
+    <form>
+      <div class="lens"></div>
+      <div class="tag Name">имя</div>
+      <input
+        type="text"
+        name="name"
+        class="name"
+        placeholder="прижизненное имя и фамилия"
+      />
+      <div class="tag">дата рождения</div>
+      <input
+        type="date"
+        class="birth date"
+        name="name"
+        placeholder="00 00 0000"
+      />
+      <div class="tag">дата смерти</div>
+      <input
+        type="date"
+        class="death date"
+        name="name"
+        placeholder="00 00 0000"
+      />
+      <div class="tag deathReasons">причина<br />смерти</div>
+      <span class="options">
+        <a class="reason">несчастный случай</a>
+        <a class="reason">убийство</a>
+        <a class="reason">медицинские осложнения</a>
+        <a class="reason">террористический акт</a>
+        <a class="reason">суицыд</a>
+      </span>
+      <div class="tag deathDetails">детали <br />смерти</div>
+      <textarea
+        type="text"
+        name="details"
+        class="details"
+        placeholder="ваши воспоминания и последующие наблюдения, которые могут помочь в расследовании"
+      ></textarea>
+    </form>
     <section class="bookOverlay">
       <div class="nav">
         <div class="title"></div>

@@ -1,6 +1,132 @@
 body {
   font-family: 'Press Start 2P', Arial, sans-serif;
   user-select: none;
+  overflow-x: clip;
+}
+
+form {
+  z-index: -1;
+  padding-top: 2vw;
+  width: 100vw;
+  opacity: 0;
+  position: absolute;
+  display: grid;
+  grid-template-columns: 20% 30% 15% 15% 20%;
+  transition: all 0.4s;
+}
+.openButton {
+  bottom: 4vw;
+  font-size: 0.7vw;
+  left: 2vw;
+  position: fixed;
+  z-index: 3;
+}
+form > * {
+  font-size: 1vw;
+  font-family: 'Press Start 2P';
+  z-index: 3;
+}
+.Name,
+.deathReasons,
+.deathDetails {
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+.options > .selected {
+  opacity: 1;
+}
+
+.options > .selected:after {
+  position: absolute;
+  bottom: -0.1vw;
+  content: '';
+  width: 100%;
+  transform-origin: center;
+  height: 0.1vw;
+  left: 0;
+  background-color: black;
+  animation: 0.2s scale;
+}
+.options,
+.details,
+.name {
+  padding-right: 2vw;
+}
+input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+input[type='date']::-webkit-input-placeholder {
+  visibility: hidden !important;
+}
+input[type='date'] {
+  text-align: right;
+}
+.birth + .tag {
+  grid-column: 3;
+}
+textarea {
+  height: 15vh;
+}
+
+input,
+textarea {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  display: block;
+  padding: 0;
+}
+
+input[type='date'] {
+  opacity: 0.4;
+}
+
+input[type='date']:hover {
+  opacity: 1;
+}
+
+input:focus,
+textarea:focus,
+input:active,
+textarea:active {
+  outline: none;
+}
+.death {
+  grid-column: 4;
+}
+.death + .tag {
+  grid-column: 1;
+  margin-top: 7vw;
+}
+.howDead,
+.options {
+  margin-top: 7vw;
+}
+.deathDetails,
+.details {
+  margin-top: 14vw;
+}
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 3vw;
+  row-gap: 1vw;
+  grid-column: 2 / span 3;
+}
+
+.options > a {
+  opacity: 0.3;
+}
+
+.options > a:hover {
+  opacity: 1;
+}
+.options + div {
+  grid-column: 1;
+}
+.details {
+  grid-column: span 3;
 }
 
 .webposter1 {
@@ -209,6 +335,7 @@ nav {
 a {
   display: inline-block;
   text-decoration: none;
+  position: relative;
   color: black;
 }
 a:hover,
@@ -223,7 +350,7 @@ section {
   margin-left: 20vw;
 }
 .book > p {
-  font-size: 2vw;
+  font-size: 2.5vw;
 }
 .book > p:first-child {
   margin-bottom: 4vw;
@@ -264,7 +391,8 @@ section {
 .pageClose {
   font-size: 1.5vw;
 }
-.close {
+.close,
+.closeForm {
   position: fixed;
   font-size: 1.5vw;
   left: 80vw;
@@ -584,7 +712,7 @@ body {
 .asset {
   float: right;
   aspect-ratio: 0.7;
-  height: 85vh;
+  height: calc(100% - 4vw);
   position: relative;
   gap: 1vw;
 }
@@ -660,6 +788,7 @@ body {
   flex-direction: row;
   top: 50%;
   padding: 2vw;
+  box-sizing: border-box;
 }
 .cursor {
   width: 9vw;
