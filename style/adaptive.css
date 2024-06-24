@@ -105,10 +105,17 @@
   .buyButtons > span {
     font-size: 3vw;
   }
-
+  .shopList {
+    flex-direction: row;
+    overflow: scroll;
+  }
+  .shopMechanismBox {
+    height: 40vw;
+  }
   .close,
   .closeForm {
     font-size: 5vw;
+    bottom: 40px;
   }
   .buyButtons > span {
     padding: 5px 10px;
