@@ -615,11 +615,19 @@ section {
   display: flex;
   justify-content: space-between;
 }
-.toCart,
-.fromCart {
+.buyOperations {
+  display: flex;
   position: absolute;
   bottom: 4vw;
+  width: 100%;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.toCart,
+.fromCart {
+  position: relative;
   font-size: 1vw;
+  display: inline-block;
 }
 .fromCart {
   right: 2vw;

@@ -214,7 +214,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       for (let i = 0; i < cart.children.length; i++) {
         if (cart.children[i].id == toDelete.id) {
-          console.log('hi');
           cart.children[i].remove();
         }
       }

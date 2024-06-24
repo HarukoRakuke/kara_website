@@ -1,0 +1,81 @@
+@media all and (min-width: 451px) {
+  .productSub {
+    position: absolute;
+    left: 32vw;
+    top: 28vw;
+  }
+}
+
+@media all and (max-width: 450px) {
+  .openButton {
+    right: 2vw;
+    top: 4vw;
+    left: auto;
+    font-size: 3vw;
+  }
+  .shop {
+    height: auto;
+    flex-direction: column;
+    padding: 60px 40px 60px;
+    width: 100%;
+    margin-left: 0;
+  }
+  .shopMechanismBox {
+    position: static;
+  }
+  .shopMechanismBox,
+  .previewBox {
+    order: 1;
+    padding-left: 0;
+    width: 100%;
+  }
+  .firstRow {
+    margin-bottom: 8vw;
+  }
+  .secondRow {
+    margin-bottom: 12vw;
+  }
+  .previewBox > .fromCart {
+    position: absolute;
+    right: 40px;
+    bottom: auto;
+  }
+  .cartScroll {
+    height: 20vw;
+  }
+  .toCart,
+  .fromCart {
+    font-size: 3vw;
+  }
+
+  .albumCover,
+  .posterCover {
+    width: 20vw;
+  }
+  .previewBox {
+    order: 2;
+    padding-right: 0;
+    position: static;
+  }
+  .title,
+  .price,
+  .buyButton,
+  .description {
+    font-size: 3vw;
+  }
+  .buyButton {
+    margin: 0;
+  }
+  .previewContent {
+    margin-bottom: 5vw;
+  }
+  .cart {
+    position: fixed;
+    right: auto;
+    width: calc(100% - 80px);
+  }
+  .buyOperations {
+    position: relative;
+    bottom: 0;
+  }
+}
