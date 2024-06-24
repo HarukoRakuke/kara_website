@@ -158,8 +158,10 @@ textarea:active {
 .lens {
   width: 100vw;
   height: 100vh;
-  position: absolute;
-  z-index: 2;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: -2;
   background-color: rgba(217, 217, 217, 0.5);
   backdrop-filter: blur(30px);
 }
@@ -405,7 +407,6 @@ section {
   width: 100%;
   min-height: 100vh;
   position: absolute;
-  backdrop-filter: blur(30px);
   padding-top: 4vh;
   opacity: 0;
   z-index: -1;

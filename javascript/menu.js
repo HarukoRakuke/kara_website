@@ -10,15 +10,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function positionMenu() {
-    const { width, height } = scrollArea.getBoundingClientRect();
+    if (window.innerWidth < 450) {
+      scrollArea.style.top = '0px';
+      scrollArea.style.left = '0px';
+    } else {
+      const { width, height } = scrollArea.getBoundingClientRect();
 
-    const widthRange = window.innerWidth - width - window.innerWidth * 0.02;
-    const heightRange = window.innerHeight - height - window.innerHeight * 0.02;
+      const widthRange = window.innerWidth - width - window.innerWidth * 0.02;
+      const heightRange =
+        window.innerHeight - height - window.innerHeight * 0.02;
 
-    scrollArea.style.top =
-      getRandomArbitrary(window.innerHeight * 0.02, heightRange) + 'px';
-    scrollArea.style.left =
-      getRandomArbitrary(window.innerWidth * 0.02, widthRange) + 'px';
+      scrollArea.style.top =
+        getRandomArbitrary(window.innerHeight * 0.02, heightRange) + 'px';
+      scrollArea.style.left =
+        getRandomArbitrary(window.innerWidth * 0.02, widthRange) + 'px';
+    }
   }
 
   positionMenu();

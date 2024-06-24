@@ -7,11 +7,42 @@
 }
 
 @media all and (max-width: 450px) {
+  .menu {
+    border: none;
+    background: none;
+    scale: 0.8;
+  }
+  .scrollArea {
+    width: 8vw;
+  }
+  .cart {
+    padding-bottom: 6vw;
+  }
+  .dragArea {
+    display: none;
+  }
+  .menuButtons {
+    display: none;
+  }
+  .navIMG {
+    top: -5vw;
+  }
+  .buyOperations {
+    margin-bottom: 4vw;
+  }
   .openButton {
     right: 2vw;
     top: 4vw;
     left: auto;
     font-size: 3vw;
+  }
+  .mobileCover {
+    position: absolute;
+    height: 30vh;
+    bottom: -4vw;
+    width: 100%;
+    background: linear-gradient(360deg, white, transparent);
+    pointer-events: none;
   }
   .shop {
     height: auto;
@@ -22,6 +53,16 @@
   }
   .shopMechanismBox {
     position: static;
+  }
+  .openButton {
+    display: none;
+  }
+  .description {
+    margin-bottom: 20vw;
+    margin-top: 5vw;
+  }
+  .cartArea > .albumCover {
+    margin-top: 5vw;
   }
   .shopMechanismBox,
   .previewBox {
@@ -43,14 +84,10 @@
   .cartScroll {
     height: 20vw;
   }
-  .toCart,
-  .fromCart {
-    font-size: 3vw;
-  }
 
   .albumCover,
   .posterCover {
-    width: 20vw;
+    width: 15vw;
   }
   .previewBox {
     order: 2;
@@ -60,8 +97,21 @@
   .title,
   .price,
   .buyButton,
-  .description {
+  .description,
+  .cardText,
+  .toCart,
+  .fromCart,
+  .buyMenu > div,
+  .buyButtons > span {
     font-size: 3vw;
+  }
+
+  .close,
+  .closeForm {
+    font-size: 5vw;
+  }
+  .buyButtons > span {
+    padding: 5px 10px;
   }
   .buyButton {
     margin: 0;
@@ -77,5 +127,20 @@
   .buyOperations {
     position: relative;
     bottom: 0;
+  }
+  .overlap {
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+  }
+  .boughtItems {
+    width: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+  .buyMenu {
+    position: relative;
+    width: 100%;
+    padding: 40px;
   }
 }
