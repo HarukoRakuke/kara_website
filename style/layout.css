@@ -134,6 +134,8 @@ textarea:active {
   height: 100vh;
   background-size: 100% auto;
   background-position: center;
+  position: relative;
+  z-index: -3;
 }
 .webposter1 > a:hover:after,
 .webposter2 > a:hover:after {
@@ -144,6 +146,8 @@ textarea:active {
   height: 100vh;
   background-size: 100% auto;
   background-position: center;
+  position: relative;
+  z-index: -3;
 }
 .webposter2 > a > span,
 .webposter1 > a > span {
@@ -165,9 +169,13 @@ textarea:active {
   z-index: 2;
   position: fixed;
 }
+h1:hover:after {
+  left: 2vw;
+}
 .lens {
   width: 100vw;
   height: 100vh;
+  z-index: -2;
   top: 0;
   left: 0;
   position: fixed;
@@ -332,16 +340,16 @@ nav {
 .menuButtons > span > a {
   font-size: 0.7vw;
 }
-.active > h1 {
+.posterbuttons {
+  padding-left: 2vw;
+}
+.active > .posterbuttons > h1 {
   display: block;
 }
 .button {
   display: none;
-  padding-left: 2vw;
 }
-.active > .button {
-  display: block;
-}
+
 .menuButtons > span {
   display: flex;
   width: 10vw;
