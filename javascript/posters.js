@@ -19,6 +19,12 @@ function assetClick() {
       section.style.paddingRight = '0';
       assets[i].style.width = '80vw';
       assets[i].style.overflowX = 'scroll';
+      if (window.innerWidth < 1024) {
+        assets[i].style.height = 'auto';
+        assets[i].style.width = '55vw';
+        assets[i].style.aspectRatio = 'auto';
+        assets[i].style.overflow = 'visible';
+      }
     });
   }
 }

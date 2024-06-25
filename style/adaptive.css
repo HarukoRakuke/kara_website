@@ -7,6 +7,20 @@
 }
 
 @media all and (min-width: 451px) and (max-width: 1024px) and (orientation: portrait) {
+  .asset {
+    width: 55vw;
+    flex-direction: column;
+    aspect-ratio: 0.7;
+    float: left;
+  }
+  .poster {
+    width: 55vw;
+    aspect-ratio: 0.7;
+    height: auto;
+  }
+  .poster:last-child {
+    margin-right: 0vw;
+  }
   .poster1 > .menuButtons {
     --i: 0;
   }
