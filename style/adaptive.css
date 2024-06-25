@@ -1,10 +1,11 @@
-@media all and (min-width: 1025px) {
+@media all and (min-width: 1024px) {
   .productSub {
     position: absolute;
     left: 32vw;
     top: 28vw;
   }
 }
+
 @media all and (min-width: 451px) and (max-width: 1024px) and (orientation: portrait) {
   .poster1 > .menuButtons {
     --i: 0;
