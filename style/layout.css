@@ -161,13 +161,16 @@ textarea:active {
   width: 26vw;
   justify-content: space-between;
 }
+.lensPoster {
+  z-index: 2;
+  position: fixed;
+}
 .lens {
   width: 100vw;
   height: 100vh;
   top: 0;
   left: 0;
   position: fixed;
-  z-index: -2;
   background-color: rgba(217, 217, 217, 0.5);
   backdrop-filter: blur(30px);
 }
@@ -334,9 +337,14 @@ nav {
 }
 .button {
   display: none;
+  padding-left: 2vw;
+}
+.active > .button {
+  display: block;
 }
 .menuButtons > span {
   display: flex;
+  width: 10vw;
   flex-direction: column;
   align-items: baseline;
 }

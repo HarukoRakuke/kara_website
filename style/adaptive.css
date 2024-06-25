@@ -76,6 +76,9 @@
   .openButton {
     font-size: 1.8vw;
   }
+  .button {
+    font-size: 1.8vw;
+  }
   .close,
   .closeForm {
     font-size: 3vw;
