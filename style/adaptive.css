@@ -1,8 +1,126 @@
-@media all and (min-width: 451px) {
+@media all and (min-width: 1025px) {
   .productSub {
     position: absolute;
     left: 32vw;
     top: 28vw;
+  }
+}
+@media all and (min-width: 451px) and (max-width: 1024px) and (orientation: portrait) {
+  .poster1 > .menuButtons {
+    --i: 0;
+  }
+
+  .poster2 > .menuButtons {
+    --i: 0;
+  }
+
+  .bookArea > .menuButtons {
+    --i: 0;
+  }
+
+  .postersArea > .menuButtons {
+    --i: 0;
+  }
+  .shopNav > .menuButtons {
+    animation: none;
+  }
+
+  .scrollArea {
+    overflow: visible;
+  }
+  .indexA {
+    overflow: hidden;
+    width: 16vw;
+    height: 16vw;
+  }
+  .menu {
+    border: none;
+    background: none;
+    height: 90vw;
+  }
+  .menuButtons {
+    flex-direction: column;
+    display: block;
+    width: 20vw;
+  }
+
+  .dragArea {
+    display: none;
+  }
+  .title,
+  .price,
+  .buyButton,
+  .description,
+  .cardText,
+  .toCart,
+  .fromCart,
+  .buyMenu > div,
+  .buyButtons > span,
+  .menuButtons > a,
+  .menuButtons > span > a,
+  .openButton {
+    font-size: 1.8vw;
+  }
+  .close,
+  .closeForm {
+    font-size: 3vw;
+  }
+  .buyOperations {
+    margin-bottom: 5vw;
+  }
+  .previewContent {
+    margin-bottom: 2vw;
+  }
+  .cartScroll {
+    height: 13vw;
+  }
+  .cart {
+    width: 50vw;
+    left: 30vw;
+  }
+  .buyButton {
+    margin-left: 0;
+  }
+  .buyOperations {
+    position: static;
+  }
+  .fromCart {
+    right: auto;
+  }
+  section {
+    padding-right: 20vw;
+    margin-left: 30vw;
+    width: 70%;
+  }
+  .previewBox {
+    order: 2;
+    padding-right: 0;
+    position: static;
+  }
+  .shopMechanismBox {
+    order: 1;
+    position: static;
+    height: 25vw;
+  }
+  .albumCover,
+  .posterCover {
+    width: 10vw;
+  }
+  .shopMechanismBox,
+  .previewBox {
+    padding-left: 0;
+    width: 100%;
+  }
+  .shop {
+    flex-direction: column;
+  }
+  .shopList {
+    flex-direction: row;
+    overflow: scroll;
+  }
+
+  .shopList::-webkit-scrollbar {
+    display: none;
   }
 }
 
@@ -14,6 +132,9 @@
   }
   .scrollArea {
     width: 8vw;
+  }
+  .fromCart {
+    right: auto;
   }
   .cart {
     padding-bottom: 6vw;
@@ -64,9 +185,11 @@
   .cartArea > .albumCover {
     margin-top: 5vw;
   }
+  .shopMechanismBox {
+    order: 1;
+  }
   .shopMechanismBox,
   .previewBox {
-    order: 1;
     padding-left: 0;
     width: 100%;
   }
@@ -109,6 +232,18 @@
     flex-direction: row;
     overflow: scroll;
   }
+
+  .shopList::-webkit-scrollbar {
+    display: none;
+  }
+  .boughtItems:not(:has(.itemCard)) {
+    display: none;
+  }
+
+  .firstRow > .albumCover,
+  .secondRow > .albumCover {
+    margin-bottom: 6vw;
+  }
   .shopMechanismBox {
     height: 40vw;
   }
@@ -116,6 +251,14 @@
   .closeForm {
     font-size: 5vw;
     bottom: 40px;
+    left: auto;
+    right: 40px;
+  }
+  .buyButtons {
+    gap: 30px;
+  }
+  .finalPrice {
+    width: 100%;
   }
   .buyButtons > span {
     padding: 5px 10px;

@@ -10,10 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function positionMenu() {
-    if (window.innerWidth < 450) {
-      scrollArea.style.top = '0px';
-      scrollArea.style.left = '0px';
-    } else {
+    if (window.innerWidth > 1024) {
       const { width, height } = scrollArea.getBoundingClientRect();
 
       const widthRange = window.innerWidth - width - window.innerWidth * 0.02;
@@ -59,24 +56,26 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   scrollArea.addEventListener('wheel', (e) => {
-    e.preventDefault();
-    scrollIMG = document.querySelector('.navIMG');
-    scrollButtons = document.querySelector('.menuButtons');
-    scrollIMG.style.animation = 'none';
-    scrollButtons.style.animation = 'none';
-    if (e.deltaY > 0) {
-      if (scrollIMG.offsetLeft > (-scrollIMG.offsetWidth * 3) / 5) {
-        scrollIMG.style.left = scrollIMG.offsetLeft - 100 + 'px';
-        scrollButtons.style.left = scrollButtons.offsetLeft - 100 + 'px';
-        console.log(scrollIMG.offsetLeft, scrollIMG.offsetWidth);
+    if (window.innerWidth > 1024) {
+      e.preventDefault();
+      scrollIMG = document.querySelector('.navIMG');
+      scrollButtons = document.querySelector('.menuButtons');
+      scrollIMG.style.animation = 'none';
+      scrollButtons.style.animation = 'none';
+      if (e.deltaY > 0) {
+        if (scrollIMG.offsetLeft > (-scrollIMG.offsetWidth * 3) / 5) {
+          scrollIMG.style.left = scrollIMG.offsetLeft - 100 + 'px';
+          scrollButtons.style.left = scrollButtons.offsetLeft - 100 + 'px';
+          console.log(scrollIMG.offsetLeft, scrollIMG.offsetWidth);
+        }
       }
-    }
-    if (e.deltaY < 0) {
-      if (scrollIMG.offsetLeft < 0) {
-        scrollIMG = document.querySelector('.navIMG');
-        scrollButtons = document.querySelector('.menuButtons');
-        scrollIMG.style.left = scrollIMG.offsetLeft + 100 + 'px';
-        scrollButtons.style.left = scrollButtons.offsetLeft + 100 + 'px';
+      if (e.deltaY < 0) {
+        if (scrollIMG.offsetLeft < 0) {
+          scrollIMG = document.querySelector('.navIMG');
+          scrollButtons = document.querySelector('.menuButtons');
+          scrollIMG.style.left = scrollIMG.offsetLeft + 100 + 'px';
+          scrollButtons.style.left = scrollButtons.offsetLeft + 100 + 'px';
+        }
       }
     }
   });

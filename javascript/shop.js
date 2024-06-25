@@ -14,10 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
   let overlapSection = document.querySelector('.overlap');
   let boughtItemsPanel = document.querySelector('.boughtItems');
   let closeButton = document.querySelector('.close');
+  let countedPrice = document.querySelector('.countedPrice');
 
   let status = 0;
   let albumCount = 7;
   let itemsCount = 15;
+  let ourPrice = 10;
 
   let titleArray = [
     'симфония принятия',
@@ -115,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let productIndex = e.target.id.substring(1);
         productTitle.innerHTML = titleArray[productIndex - 1];
         productTitle.classList.remove('opacityAnim');
-        price.innerHTML = '$20';
+        price.innerHTML = '$10';
         price.classList.remove('opacityAnim');
         setTimeout(() => {
           productTitle.classList.add('opacityAnim');
@@ -162,6 +164,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function sum(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) sum += arr[i];
+    return sum;
+  }
+
+  function countPrice() {
+    let itemArray = [];
+    let eachItem = document.querySelectorAll('.number');
+    eachItem.forEach((item) => {
+      let a = item.innerHTML.substring(1);
+      a = parseInt(a);
+      itemArray.push(a);
+    });
+    return sum(itemArray);
+  }
+
   function buyPopup() {
     buyButton.addEventListener('click', () => {
       overlapSection.style.zIndex = '10';
@@ -176,9 +195,12 @@ document.addEventListener('DOMContentLoaded', () => {
         let card = document.createElement('div');
         let textDescription = document.createElement('div');
         let tagName = document.createElement('div');
+        tagName.setAttribute('lang', 'ru');
+        tagName.style.hyphens = 'auto';
         tagName.innerHTML = titleArray[itemClon.id.substring(1) - 1];
         let countTag = document.createElement('div');
         countTag.innerHTML = `x${duplicates[item.id]}`;
+        countTag.classList.add('number');
         card.classList.add('itemCard');
         textDescription.classList.add('cardText');
         boughtItemsPanel.append(card);
@@ -187,6 +209,8 @@ document.addEventListener('DOMContentLoaded', () => {
         textDescription.append(tagName);
         textDescription.append(countTag);
       });
+      console.log(countPrice());
+      countedPrice.innerHTML = `$${countPrice() * ourPrice}`;
     });
   }
 
