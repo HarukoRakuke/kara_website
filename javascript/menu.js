@@ -4,6 +4,18 @@ document.addEventListener('DOMContentLoaded', () => {
   let scrollArea = document.querySelector('.menu');
   let dropDown = document.querySelector('.dropDown');
   let dragSquare = document.querySelector('.dragArea');
+  let smallCursor = document.querySelector('.smallCursor');
+
+  function drag() {
+    dragSquare.addEventListener('mouseover', () => {
+      console.log('hi');
+      smallCursor.style.animation = 'pop 0.2s infinite';
+    });
+    dragSquare.addEventListener('mouseout', () => {
+      console.log('hi');
+      smallCursor.style.animation = 'none';
+    });
+  }
 
   function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
@@ -79,4 +91,5 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+  drag();
 });

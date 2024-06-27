@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let boughtItemsPanel = document.querySelector('.boughtItems');
   let closeButton = document.querySelector('.close');
   let countedPrice = document.querySelector('.countedPrice');
+  let smallCursor = document.querySelector('.smallCursor');
 
   let status = 0;
   let albumCount = 7;
@@ -68,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (index < albumCount) {
         item.classList.add('albumCover');
         item.classList.add('item');
+        item.classList.add('hoverable');
         item.setAttribute('id', `i${index + 1}`);
         item.style.backgroundImage = `url('./img/item${index + 1}.png')`;
       }
@@ -75,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (index >= albumCount) {
         item.classList.add('posterCover');
         item.classList.add('item');
+        item.classList.add('hoverable');
         item.setAttribute('id', `i${index + 1}`);
         item.style.backgroundImage = `url('./img/item${index + 1}.png')`;
       }
@@ -109,8 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function moveForwards() {
     shopList.addEventListener('click', (e) => {
       if (
-        e.target.className == 'posterCover item' ||
-        e.target.className == 'albumCover item'
+        e.target.className == 'posterCover item hoverable' ||
+        e.target.className == 'albumCover item hoverable'
       ) {
         let previewContent = e.target;
         let parent = e.target.parentNode;

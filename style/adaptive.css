@@ -5,8 +5,157 @@
     top: 28vw;
   }
 }
+@media all and (max-width: 1024px) {
+  .details {
+    grid-column: span 1;
+  }
+  .options {
+    grid-column: 2;
+  }
+  .smallCursor,
+  .cursor {
+    display: none;
+  }
+  .bookOverlay {
+    flex-direction: column;
+    margin-left: 0;
+    padding-left: 10%;
+    padding-top: 4vh;
+    padding-right: 10%;
+  }
+
+  .bookOverlay > .page {
+    margin-left: 0;
+    width: 100%;
+  }
+  .nav {
+    width: 100%;
+    padding-left: 0;
+  }
+  .pageSwitches {
+    width: 80%;
+    position: absolute;
+    right: 10vw;
+    bottom: 4vw;
+  }
+
+  .pageClose {
+    font-size: 3vw;
+  }
+  .pagesArrows > div {
+    font-size: 2.8vw;
+  }
+  .title {
+    padding-top: 8vw;
+  }
+  nav > a:nth-of-type(odd) {
+    text-align: right;
+  }
+  .menu > a {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1920px) {
+  .wave img {
+    transform: rotate(45deg);
+    position: absolute;
+    width: 320%;
+    top: -5%;
+    left: -110%;
+    pointer-events: none;
+  }
+}
 
 @media all and (min-width: 451px) and (max-width: 1024px) and (orientation: portrait) {
+  .cardText {
+    min-width: 60%;
+  }
+  .itemCard {
+    padding: 0vw 0vw 0vw 0vw;
+  }
+  .overlap {
+    padding-left: 10vw;
+  }
+  form {
+    grid-template-columns: 35% 45%;
+  }
+  .birth + .tag {
+    grid-column: 1;
+  }
+  .birthDate {
+    grid-column: 1;
+  }
+  .death.date {
+    grid-column: 2;
+    text-align: left;
+  }
+  .birth.date {
+    text-align: left;
+  }
+  .name {
+    margin-bottom: 7vw;
+  }
+
+  .index > nav {
+    padding: 10vw;
+  }
+  .buyMenu {
+    padding-left: 4vw;
+  }
+
+  .birthDate,
+  .deathDate {
+    padding-left: 2vw;
+  }
+  form {
+    padding-top: 4vw;
+  }
+  .pageInfo {
+    font-size: 2vw;
+  }
+  .titles + .menu {
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+    top: auto;
+  }
+  .title {
+    font-size: 2vw;
+    width: 70%;
+  }
+  .index h1 {
+    font-size: 3vw;
+  }
+  .titles {
+    flex-direction: column;
+    align-items: end;
+    right: 20vw;
+    width: 80%;
+  }
+
+  .wave img {
+    transform: rotate(40deg);
+    position: absolute;
+    width: 220%;
+    top: 17%;
+    left: -150%;
+    scale: 5;
+  }
+
+  .buyButton:hover:after,
+  a:hover:after,
+  .button:hover:after,
+  .toCart:hover:after,
+  .fromCart:hover:after,
+  .link > span:hover:after,
+  .buyButtons > span:hover:after {
+    top: 2vw;
+  }
+  .button:hover:after {
+    top: auto;
+    bottom: -0.3vw;
+  }
   .asset {
     width: 55vw;
     flex-direction: column;
@@ -62,7 +211,7 @@
   .dragArea {
     display: none;
   }
-  .title,
+
   .price,
   .buyButton,
   .description,
@@ -73,12 +222,14 @@
   .buyButtons > span,
   .menuButtons > a,
   .menuButtons > span > a,
-  .openButton {
-    font-size: 1.8vw;
+  .openButton,
+  .menu > a,
+  .link > span,
+  .button,
+  form > * {
+    font-size: 2vw;
   }
-  .button {
-    font-size: 1.8vw;
-  }
+
   .close,
   .closeForm {
     font-size: 3vw;
@@ -143,6 +294,37 @@
 }
 
 @media all and (max-width: 450px) {
+  .index h1 {
+    font-size: 5vw;
+  }
+
+  .titles {
+    flex-direction: column;
+    align-items: start;
+    left: 10vw;
+    width: 80%;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 30vw 0;
+  }
+
+  .wave img {
+    transform: rotate(70deg);
+    position: absolute;
+    width: 220%;
+    top: -54%;
+    left: -160%;
+    scale: 5;
+  }
+  .buyButton:hover:after,
+  a:hover:after,
+  .button:hover:after,
+  .toCart:hover:after,
+  .fromCart:hover:after,
+  .link > span:hover:after,
+  .buyButtons > span:hover:after {
+    top: 3vw;
+  }
   .menu {
     border: none;
     background: none;
@@ -243,8 +425,19 @@
   .toCart,
   .fromCart,
   .buyMenu > div,
-  .buyButtons > span {
-    font-size: 3vw;
+  .buyButtons > span,
+  .link > span,
+  .button,
+  .menuButtons > a,
+  .dropDown > a,
+  .menu > a {
+    font-size: 4vw;
+  }
+  .titles + .menu {
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+    top: auto;
   }
   .shopList {
     flex-direction: row;

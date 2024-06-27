@@ -2,10 +2,58 @@ let assets = document.querySelectorAll('.asset');
 let buttons = document.querySelectorAll('.button');
 let section = document.querySelector('section');
 
+// smallcursor не получается подключить к poster.html напрямую, чтобы потом срабатывал скрипт и находил snmallCursor в этом файле джс,
+// скорее всего, проблема в том, что этот ДЖС подключается как модуль, но если не дописывать это состояние, код вообще перестает работать,
+// поэтому ниже такой вот костыль, где я по сути копирую часть кода из smallcursor.js
+
+let body = document.querySelector('body');
+let As = document.querySelectorAll('.hoverable');
+function onHover() {
+  As.forEach((a) => {
+    a.addEventListener('mouseover', () => {
+      smallCursor.style.backgroundColor = 'white';
+      smallCursor.style.border = '0.1vw solid black';
+    });
+    a.addEventListener('mouseout', () => {
+      smallCursor.style.backgroundColor = 'black';
+      smallCursor.style.border = '0.1vw solid black';
+    });
+  });
+}
+
+function generateCursor() {
+  let l = document.createElement('div');
+  l.classList.add('smallCursor');
+  body.appendChild(l);
+}
+
+function moveCursor() {
+  body.addEventListener('mousemove', (e) => {
+    smallCursor.style.top = e.pageY + 'px';
+    smallCursor.style.left = e.pageX + 'px';
+  });
+}
+
+generateCursor();
+let smallCursor = document.querySelector('.smallCursor');
+
+moveCursor();
+
+// конец костыля
+
 function assetClick() {
   assets.forEach((asset, i) => {
     asset.addEventListener('click', () => {
       posterView(i);
+    });
+    asset.addEventListener('mouseover', () => {
+      console.log('whi');
+      smallCursor.style.backgroundColor = 'white';
+      smallCursor.style.border = '0.1vw solid black';
+    });
+    asset.addEventListener('mouseout', () => {
+      smallCursor.style.backgroundColor = 'black';
+      smallCursor.style.border = '0.1vw solid black';
     });
   });
 
@@ -112,4 +160,5 @@ function buttonHover() {
 document.addEventListener('DOMContentLoaded', () => {
   buttonHover();
   assetClick();
+  onHover();
 });

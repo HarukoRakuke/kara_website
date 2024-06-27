@@ -2,14 +2,36 @@ body {
   font-family: 'Press Start 2P', Arial, sans-serif;
   user-select: none;
   overflow-x: clip;
+  cursor: none;
+}
+a {
+  cursor: none;
 }
 
+video {
+  width: 50%;
+  transform-origin: top left;
+
+  transition: 1s all;
+  border: 0.15vw solid black;
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+}
+@keyframes pop {
+  0%,
+  100% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+}
 form {
   z-index: -1;
   padding-top: 2vw;
   width: 100vw;
   opacity: 0;
-  position: absolute;
+  position: fixed;
   display: grid;
   grid-template-columns: 20% 30% 15% 15% 20%;
   transition: all 0.4s;
@@ -149,16 +171,6 @@ textarea:active {
   position: relative;
   z-index: -3;
 }
-.webposter2 > a > span,
-.webposter1 > a > span {
-  font-size: 1vw;
-  position: absolute;
-  z-index: 3;
-  right: 20vw;
-  padding: 0.5vw 1vw;
-  background-color: white;
-  border: 0.1vw solid black;
-}
 
 .finalPrice {
   display: flex;
@@ -200,7 +212,7 @@ h1:hover:after {
 }
 .bookOverlay > .page {
   margin-left: 2vw;
-  transition: 0.8s linear;
+  transition: 0.2s linear;
   width: 80%;
   position: relative;
   order: 1;
@@ -210,7 +222,7 @@ h1:hover:after {
   width: calc(20% - 2vw);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding-left: 2vw;
   box-sizing: border-box;
 }
@@ -300,9 +312,15 @@ nav {
     height: 16vw;
   }
   100% {
-    height: 24vw;
+    height: 27vw;
   }
 }
+
+.webposter1 > a,
+.webposter2 > a {
+  position: absolute;
+}
+
 .navIMG {
   width: 50vw;
   top: -2vw;
@@ -399,7 +417,6 @@ section {
   right: 0;
   top: 0;
   transition: 2s ease-out;
-  box-shadow: 5px 5px 24px -20px rgba(0, 0, 0, 1);
 }
 .posters {
   width: 80vw;
@@ -450,13 +467,17 @@ section {
 }
 .buyButtons {
   display: flex;
-  gap: 1vw;
+  gap: 4vw;
+}
+
+.sendForm {
+  grid-column: 1;
+  position: fixed;
+  bottom: 4vw;
+  left: 2vw;
 }
 .buyButtons > span {
   box-sizing: border-box;
-  padding: 0.5vw 1vw;
-  background-color: white;
-  border: 0.1vw solid black;
 }
 .buyMenu {
   position: fixed;
@@ -664,9 +685,11 @@ section {
 a:hover:after,
 .button:hover:after,
 .toCart:hover:after,
-.fromCart:hover:after {
+.fromCart:hover:after,
+.link > span:hover:after,
+.buyButtons > span:hover:after {
   position: absolute;
-  bottom: -0.1vw;
+  top: 0.8vw;
   content: '';
   width: 100%;
   transform-origin: center;
@@ -674,6 +697,22 @@ a:hover:after,
   left: 0;
   background-color: black;
   animation: 0.2s scale;
+}
+.button:hover:after {
+  top: auto;
+  bottom: -0.3vw;
+}
+.buyButtons > span {
+  position: relative;
+}
+.link {
+  position: absolute;
+  right: 20vw;
+  top: 4vw;
+  font-size: 1vw;
+}
+.link > span {
+  position: relative;
 }
 .productSub {
   display: flex;
@@ -705,7 +744,6 @@ a:hover:after,
   overflow: hidden;
   gap: 40vw;
   background-color: #fbfbfb;
-  cursor: none;
 }
 
 .titles {
@@ -836,12 +874,17 @@ body {
   position: absolute;
   z-index: 7;
 }
+
+.pageInfo {
+  padding-top: 2vw;
+  font-size: 0.7vw;
+}
 .smallCursor {
   width: 1vw;
   height: 1vw;
   background-color: black;
   position: absolute;
-  z-index: 7;
+  z-index: 15;
   pointer-events: none;
 }
 

@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let overlapSection = document.querySelector('form');
   let closeButton = document.querySelector('.closeForm');
   let openButton = document.querySelector('.openButton');
+  let smallCursor = document.querySelector('.smallCursor');
 
   function changeOpacity() {
     formDates.forEach((formDate) => {

@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let img = document.querySelector('.wave');
   let gif = document.querySelector('.waveIMG');
   let nav = document.querySelector('nav');
+  let smallCursor = document.querySelector('.smallCursor');
+
   let status = 0;
 
   function waveMove() {
@@ -36,31 +38,51 @@ document.addEventListener('DOMContentLoaded', () => {
     let m = document.createElement('div');
     m.classList.add('cursor');
     index.appendChild(m);
-
-    let l = document.createElement('div');
-    l.classList.add('smallCursor');
-    index.appendChild(l);
   }
 
   generateCursor();
 
   let cursor = document.querySelector('.cursor');
-  let smallCursor = document.querySelector('.smallCursor');
 
   function moveCursor() {
     index.addEventListener('mousemove', (e) => {
-      cursor.style.top = e.clientY + 'px';
-      cursor.style.left = e.clientX + 'px';
-      smallCursor.style.top = e.clientY + 'px';
-      smallCursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.pageY + 'px';
+      cursor.style.left = e.pageX + 'px';
     });
   }
 
   function closeMain() {
     section.addEventListener('click', () => {
       status = 1;
-      gif.style.transform = 'rotate(0deg) scale(0.4)';
-      gif.style.top = '-100%';
+      if (window.innerWidth >= 1920) {
+        gif.style.transform = 'rotate(0deg) scale(0.4)';
+        gif.style.top = '-70%';
+      } else if ((window.innerWidth < 1920) & (window.innerWidth > 1620)) {
+        gif.style.transform = 'rotate(0deg) scale(0.4)';
+        gif.style.top = '-80%';
+        gif.style.left = '-100%';
+      } else if ((window.innerWidth <= 1620) & (window.innerWidth > 1280)) {
+        gif.style.transform = 'rotate(0deg) scale(0.4)';
+        gif.style.top = '-60%';
+        gif.style.left = '-100%';
+      } else if ((window.innerWidth <= 1280) & (window.innerWidth > 1024)) {
+        gif.style.transform = 'rotate(0deg) scale(0.4)';
+        gif.style.top = '-50%';
+        gif.style.left = '-100%';
+      } else if ((window.innerWidth >= 720) & (window.innerWidth <= 1024)) {
+        gif.style.transform = 'rotate(90deg) scale(0.2)';
+        gif.style.left = '-70%';
+        gif.style.top = '30%';
+      } else if ((window.innerWidth >= 420) & (window.innerWidth < 720)) {
+        gif.style.transform = 'rotate(90deg) scale(0.3)';
+        gif.style.left = '-60%';
+        gif.style.top = '40%';
+      } else if (window.innerWidth < 420) {
+        gif.style.transform = 'rotate(90deg) scale(0.3)';
+        gif.style.left = '-70%';
+        gif.style.top = '50%';
+      }
+
       document.querySelectorAll('h1').forEach((h1) => {
         h1.style.display = 'none';
       });

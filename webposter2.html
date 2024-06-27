@@ -5,79 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style/style.css" />
+    <script src="javascript/smallcursor.js"></script>
     <script src="javascript/menu.js"></script>
     <script src="javascript/form.js"></script>
   </head>
   <body>
-    <a class="openButton">связаться</a>
-    <span class="closeForm">x</span>
+    <a class="openButton hoverable">связаться</a>
+    <span class="closeForm hoverable">x</span>
     <form>
       <div class="lens"></div>
       <div class="tag Name">имя</div>
       <input
         type="text"
         name="name"
-        class="name"
+        class="name hoverable"
         placeholder="прижизненное имя и фамилия"
       />
-      <div class="tag">дата рождения</div>
+      <div class="tag birthDate">дата рождения</div>
       <input
         type="date"
-        class="birth date"
+        class="birth date hoverable"
         name="name"
         placeholder="00 00 0000"
       />
-      <div class="tag">дата смерти</div>
+      <div class="tag deathDate">дата смерти</div>
       <input
         type="date"
-        class="death date"
+        class="death date hoverable"
         name="name"
         placeholder="00 00 0000"
       />
       <div class="tag deathReasons">причина<br />смерти</div>
       <span class="options">
-        <a class="reason">несчастный случай</a>
-        <a class="reason">убийство</a>
-        <a class="reason">медицинские осложнения</a>
-        <a class="reason">террористический акт</a>
-        <a class="reason">суицыд</a>
+        <a class="reason hoverable">несчастный случай</a>
+        <a class="reason hoverable">убийство</a>
+        <a class="reason hoverable">медицинские осложнения</a>
+        <a class="reason hoverable">террористический акт</a>
+        <a class="reason hoverable">суицыд</a>
       </span>
       <div class="tag deathDetails">детали <br />смерти</div>
+
       <textarea
         type="text"
         name="details"
-        class="details"
+        class="details hoverable"
         placeholder="ваши воспоминания и последующие наблюдения, которые могут помочь в расследовании"
       ></textarea>
+      <div class="tag sendForm">отправить <br />сигнал</div>
     </form>
     <nav class="menu">
       <div class="scrollArea poster2">
         <div class="dragArea"></div>
-        <a href="index.html" class="indexA">
+        <a href="index.html" class="indexA hoverable">
           <img src="img/vectorWave.png" alt="" class="navIMG"
         /></a>
         <div class="menuButtons">
-          <a href="shop.html">артефакты</a>
+          <a href="shop.html " class="hoverable">артефакты</a>
           <span class="dropDown">
-            <a href="posters.html">консультации</a>
-            <h1 class="button">дешифровка</h1>
-            <h1 class="button">посмертная встреча</h1>
-            <h1 class="button">психотерапия</h1>
-            <h1 class="button">социальная акция</h1>
-            <h1 class="button">отматывание смерти</h1>
-            <h1 class="button">интервью</h1>
+            <a href="posters.html" class="hoverable">консультации</a>
+            <div class="posterbuttons">
+              <h1 class="button hoverable">дешифровка</h1>
+              <h1 class="button hoverable">посмертная встреча</h1>
+              <h1 class="button hoverable">психотерапия</h1>
+              <h1 class="button hoverable">социальная акция</h1>
+              <h1 class="button hoverable">отматывание смерти</h1>
+              <h1 class="button hoverable">интервью</h1>
+            </div>
           </span>
-          <a href="book.html">исследования</a>
-          <a href="webposter1.html">сотрудникам</a>
-          <a href="webposter2.html">методология</a>
+          <a href="book.html" class="hoverable">исследования</a>
+          <a href="webposter1.html" class="hoverable">сотрудникам</a>
+          <a href="webposter2.html" class="hoverable">методология</a>
         </div>
       </div>
     </nav>
     <div class="lensPoster lens"></div>
-    <section class="webposter2">
-      <a href="https://harukorakuke.github.io/WebPosterKARA/"
-        ><span>изучить</span></a
-      >
-    </section>
+    <a
+      href="https://harukorakuke.github.io/WebPosterKARA/"
+      target="_blank"
+      class="link"
+      ><span>изучить</span></a
+    >
+    <section class="webposter2"></section>
   </body>
 </html>
