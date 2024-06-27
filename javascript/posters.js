@@ -67,9 +67,15 @@ function assetClick() {
       section.style.paddingRight = '0';
       assets[i].style.width = '80vw';
       assets[i].style.overflowX = 'scroll';
-      if (window.innerWidth < 1024) {
+      if ((window.innerWidth < 1024) & (window.innerWidth > 450)) {
         assets[i].style.height = 'auto';
         assets[i].style.width = '55vw';
+        assets[i].style.aspectRatio = 'auto';
+        assets[i].style.overflow = 'visible';
+      }
+      if (window.innerWidth < 450) {
+        assets[i].style.height = 'auto';
+        assets[i].style.width = '80vw';
         assets[i].style.aspectRatio = 'auto';
         assets[i].style.overflow = 'visible';
       }
@@ -80,7 +86,12 @@ function assetClick() {
 function buttonHover() {
   buttons.forEach((button, i) => {
     button.addEventListener('mouseover', () => {
-      section.style.paddingRight = '20vw';
+      if (window.innerWidth > 450) {
+        section.style.paddingRight = '20vw';
+      }
+      if (window.innerWidth < 450) {
+        section.style.paddingRight = '10vw';
+      }
       let asset = assets[i];
       assets.forEach((serie) => {
         serie.style.display = 'none';

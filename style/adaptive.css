@@ -12,10 +12,7 @@
   .options {
     grid-column: 2;
   }
-  .smallCursor,
-  .cursor {
-    display: none;
-  }
+
   .bookOverlay {
     flex-direction: column;
     margin-left: 0;
@@ -294,10 +291,66 @@
 }
 
 @media all and (max-width: 450px) {
+  .scrollArea {
+    overflow: visible;
+  }
+
+  .indexA {
+    width: 8vw;
+    height: 100%;
+    overflow: hidden;
+  }
+  .postersArea > .menuButtons {
+    display: block;
+  }
+  .menuButtons > a,
+  .posterButton {
+    display: none;
+  }
+
+  .posterbuttons {
+    position: absolute;
+    left: 17vw;
+    width: 110vw;
+    background-color: white;
+    padding-bottom: 5vw;
+    top: -20%;
+  }
+  .posterbuttons:after {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -119%;
+    left: -2%;
+    background-color: white;
+  }
+  .asset {
+    top: 20%;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    float: left;
+  }
+
+  .asset:has(.poster) {
+    width: 100%;
+  }
+
   .index h1 {
     font-size: 5vw;
   }
-
+  .poster:last-child {
+    margin-right: 0vw;
+  }
+  .posters {
+    margin-left: 10vw;
+    padding-right: 10vw;
+    width: 90%;
+  }
+  .posterbuttons {
+    padding-left: 0vw;
+  }
   .titles {
     flex-direction: column;
     align-items: start;
