@@ -59,15 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
         gif.style.top = '-70%';
       } else if ((window.innerWidth < 1920) & (window.innerWidth > 1620)) {
         gif.style.transform = 'rotate(0deg) scale(0.4)';
-        gif.style.top = '-80%';
+        gif.style.top = '-40%';
         gif.style.left = '-100%';
       } else if ((window.innerWidth <= 1620) & (window.innerWidth > 1280)) {
         gif.style.transform = 'rotate(0deg) scale(0.4)';
-        gif.style.top = '-60%';
+        gif.style.top = '-30%';
         gif.style.left = '-100%';
       } else if ((window.innerWidth <= 1280) & (window.innerWidth > 1024)) {
         gif.style.transform = 'rotate(0deg) scale(0.4)';
-        gif.style.top = '-50%';
+        gif.style.top = '-5%';
         gif.style.left = '-100%';
       } else if ((window.innerWidth >= 720) & (window.innerWidth <= 1024)) {
         gif.style.transform = 'rotate(90deg) scale(0.2)';

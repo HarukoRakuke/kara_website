@@ -4,6 +4,9 @@
     left: 32vw;
     top: 28vw;
   }
+  .menu > a:nth-of-type(odd) {
+    align-self: flex-end;
+  }
 }
 @media all and (max-width: 1024px) {
   .cursor,
