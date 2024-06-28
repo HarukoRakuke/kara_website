@@ -65,11 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
         gif.style.transform = 'rotate(0deg) scale(0.4)';
         gif.style.top = '-30%';
         gif.style.left = '-100%';
-      } else if ((window.innerWidth <= 1280) & (window.innerWidth > 1024)) {
+      } else if ((window.innerWidth <= 1280) & (window.innerWidth >= 1024)) {
         gif.style.transform = 'rotate(0deg) scale(0.4)';
-        gif.style.top = '-5%';
+        gif.style.top = '-45%';
         gif.style.left = '-100%';
-      } else if ((window.innerWidth >= 720) & (window.innerWidth <= 1024)) {
+      } else if ((window.innerWidth >= 720) & (window.innerWidth < 1024)) {
         gif.style.transform = 'rotate(90deg) scale(0.2)';
         gif.style.left = '-70%';
         gif.style.top = '30%';

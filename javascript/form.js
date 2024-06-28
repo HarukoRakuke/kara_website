@@ -53,9 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
         popup();
       });
     }
-    openButton2.addEventListener('click', () => {
-      popup();
-    });
+    if (openButton2) {
+      openButton2.addEventListener('click', () => {
+        popup();
+      });
+    }
   }
 
   function closeSee() {

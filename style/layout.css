@@ -4,6 +4,10 @@ body {
   overflow-x: clip;
   cursor: none;
 }
+
+.index {
+  overflow: hidden;
+}
 a {
   cursor: none;
 }
