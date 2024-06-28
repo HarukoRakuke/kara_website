@@ -140,11 +140,11 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           descriptionPlace.classList.add('opacityAnim');
         });
-        if (previewContent.className == 'posterCover item') {
+        if (previewContent.className == 'posterCover item hoverable') {
           descriptionPlace.innerHTML =
             'постер с визуализацией состояния призрака на этапе принятия смерти';
         }
-        if (previewContent.className == 'albumCover item') {
+        if (previewContent.className == 'albumCover item hoverable') {
           descriptionPlace.innerHTML =
             'музыкальная пластинка с дешифрованным посланием упокоенной души';
         }

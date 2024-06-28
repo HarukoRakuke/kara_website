@@ -16,6 +16,7 @@
     </style>
   </head>
   <body>
+    <span class="closeForm hoverable">x</span>
     <section class="index">
       <div class="wave">
         <img src="img/animatedWave.gif" class="waveIMG" />
@@ -31,9 +32,51 @@
         <a href="posters.html" class="hoverable">консультации</a>
         <a href="shop.html" class="hoverable">артефакты</a>
         <a href="book.html" class="hoverable">исследования</a>
+        <a class="openForm hoverable">связаться</a>
         <a href="webposter1.html" class="hoverable">методология</a>
         <a href="webposter2.html" class="hoverable">сотрудникам</a>
       </nav>
+      <form>
+        <div class="lens"></div>
+        <div class="tag Name">имя</div>
+        <input
+          type="text"
+          name="name"
+          class="name hoverable"
+          placeholder="прижизненное имя и фамилия"
+        />
+        <div class="tag birthDate">дата рождения</div>
+        <input
+          type="date"
+          class="birth date hoverable"
+          name="name"
+          placeholder="00 00 0000"
+        />
+        <div class="tag deathDate">дата смерти</div>
+        <input
+          type="date"
+          class="death date hoverable"
+          name="name"
+          placeholder="00 00 0000"
+        />
+        <div class="tag deathReasons">причина<br />смерти</div>
+        <span class="options">
+          <a class="reason hoverable">несчастный случай</a>
+          <a class="reason hoverable">убийство</a>
+          <a class="reason hoverable">медицинские осложнения</a>
+          <a class="reason hoverable">террористический акт</a>
+          <a class="reason hoverable">суицыд</a>
+        </span>
+        <div class="tag deathDetails">детали <br />смерти</div>
+
+        <textarea
+          type="text"
+          name="details"
+          class="details hoverable"
+          placeholder="ваши воспоминания и последующие наблюдения, которые могут помочь в расследовании"
+        ></textarea>
+        <div class="tag sendForm">отправить <br />сигнал</div>
+      </form>
     </section>
   </body>
 </html>

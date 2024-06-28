@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let overlapSection = document.querySelector('form');
   let closeButton = document.querySelector('.closeForm');
   let openButton = document.querySelector('.openButton');
+  let openButton2 = document.querySelector('.openForm');
   let smallCursor = document.querySelector('.smallCursor');
 
   function changeOpacity() {
@@ -47,7 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function openPopup() {
-    openButton.addEventListener('click', () => {
+    if (openButton) {
+      openButton.addEventListener('click', () => {
+        popup();
+      });
+    }
+    openButton2.addEventListener('click', () => {
       popup();
     });
   }

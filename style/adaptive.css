@@ -6,6 +6,21 @@
   }
 }
 @media all and (max-width: 1024px) {
+  .cursor,
+  .smallCursor {
+    left: 25%;
+    top: 25%;
+    animation: moveCursor infinite 10s;
+  }
+  .cursor {
+    width: 25vw;
+  }
+  .smallCursor {
+    width: 2vw;
+    height: 2vw;
+    aspect-ratio: 1;
+    animation: moveCursor infinite 10s;
+  }
   .details {
     grid-column: span 1;
   }
@@ -51,6 +66,33 @@
   .menu > a {
     width: 100%;
   }
+  form {
+    grid-template-columns: 35% 45%;
+  }
+  .birth + .tag {
+    grid-column: 1;
+  }
+  .birthDate {
+    grid-column: 1;
+  }
+  .death.date {
+    grid-column: 2;
+    text-align: left;
+  }
+  .birth.date {
+    text-align: left;
+  }
+  .name {
+    margin-bottom: 7vw;
+  }
+
+  .birthDate,
+  .deathDate {
+    padding-left: 2vw;
+  }
+  form > * {
+    font-size: 4vw;
+  }
 }
 
 @media all and (min-width: 1024px) and (max-width: 1920px) {
@@ -74,36 +116,12 @@
   .overlap {
     padding-left: 10vw;
   }
-  form {
-    grid-template-columns: 35% 45%;
-  }
-  .birth + .tag {
-    grid-column: 1;
-  }
-  .birthDate {
-    grid-column: 1;
-  }
-  .death.date {
-    grid-column: 2;
-    text-align: left;
-  }
-  .birth.date {
-    text-align: left;
-  }
-  .name {
-    margin-bottom: 7vw;
-  }
 
   .index > nav {
     padding: 10vw;
   }
   .buyMenu {
     padding-left: 4vw;
-  }
-
-  .birthDate,
-  .deathDate {
-    padding-left: 2vw;
   }
   form {
     padding-top: 4vw;
@@ -291,6 +309,48 @@
 }
 
 @media all and (max-width: 450px) {
+  form {
+    grid-template-columns: 20% 80%;
+  }
+
+  .Name,
+  .deathReasons,
+  .birthDate,
+  .birth + .tag,
+  .options + div {
+    padding-left: 0vw;
+    padding-right: 0vw;
+  }
+  .birth.date {
+    margin-bottom: 2vw;
+  }
+  .birth.date,
+  .death.date,
+  .birthDate,
+  .birth + .tag,
+  .options,
+  .details {
+    grid-column: 1 / span 2;
+  }
+  .details,
+  .options {
+    margin-top: 2vw;
+  }
+  .link {
+    right: 4vw;
+  }
+  .lens {
+    backdrop-filter: blur(20px);
+  }
+  .book > p,
+  .pageInfo {
+    font-size: 4vw;
+  }
+  section {
+    margin-left: 10vw;
+    padding-right: 10vw;
+    width: 90%;
+  }
   .scrollArea {
     overflow: visible;
   }
@@ -376,7 +436,7 @@
   .fromCart:hover:after,
   .link > span:hover:after,
   .buyButtons > span:hover:after {
-    top: 3vw;
+    top: 4vw;
   }
   .menu {
     border: none;
@@ -512,12 +572,23 @@
     height: 40vw;
   }
   .close,
-  .closeForm {
+  .closeForm,
+  .pagesArrows > div,
+  .pageClose {
     font-size: 5vw;
     bottom: 40px;
     left: auto;
     right: 40px;
   }
+  form {
+    padding: 40px;
+    box-sizing: border-box;
+  }
+  .sendForm {
+    bottom: 40px;
+    left: 40px;
+  }
+
   .buyButtons {
     gap: 30px;
   }

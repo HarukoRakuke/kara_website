@@ -570,6 +570,29 @@ section {
   margin-bottom: 2vw;
 }
 
+@keyframes moveCursor {
+  20% {
+    top: 50%;
+    left: 10%;
+  }
+  25% {
+    top: 51%;
+    left: 15%;
+  }
+  45% {
+    top: 11%;
+    left: 35%;
+  }
+  67% {
+    top: 13%;
+    left: 87%;
+  }
+  89% {
+    top: 45%;
+    left: 27%;
+  }
+}
+
 .firstRow > .albumCover:hover,
 .secondRow > .albumCover:hover {
   width: 50%;
